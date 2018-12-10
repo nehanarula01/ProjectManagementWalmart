@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Text;
+using DayPilot.Utils;
+using DayPilot.Web.Ui;
+using DayPilot.Web.Ui.Events.Scheduler;
+using Util.Task;
+using Util.Ui;
+using Resource = DayPilot.Web.Ui.Resource;
+using System.Web.Security;
+
+public partial class Default : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            LoadProjects();
+        }
+    }
+
+    private void LoadProjects()
+    {
+        
+    }
+
+    protected void ButtonRefresh_Click(object sender, EventArgs e)
+    {
+        LoadProjects();
+    }
+
+    protected void UpdatePanelProjects_Load(object sender, EventArgs e)
+    {
+        
+    }
+    protected void Login1_Authenticate(object sender, System.Web.UI.WebControls.AuthenticateEventArgs e)
+    {
+       bool ActiveUser = new DataManager().ValidateUser(Login1.UserName,Login1.Password);
+        if (ActiveUser)
+        {
+            FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);
+        }
+        else
+        {
+
+        }
+        
+    }
+}

@@ -1,0 +1,25 @@
+<%@ Page Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Default" Title="Projects"  %>
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent"></asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
+<script src="Scripts/DayPilot/modal.js" type="text/javascript"></script>
+<script src="Scripts/App/projects.js" type="text/javascript"></script>
+
+<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+<asp:UpdatePanel ID="UpdatePanelProjects" runat="server" OnLoad="UpdatePanelProjects_Load">
+<ContentTemplate>
+
+    <div>
+        <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate"></asp:Login>
+
+    </div>
+
+
+</ContentTemplate>
+</asp:UpdatePanel>
+
+<script type="text/javascript">
+   
+</script>
+
+</asp:Content>
+
